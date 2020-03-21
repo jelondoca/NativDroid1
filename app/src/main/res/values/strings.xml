@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">NativDroid1</string>
+    <string name="app_name">My Application</string>
+    <string name="user">Ingrese su usuario</string>
+    <string name="password">Ingrese su contraseña</string>
+    <string name="user_label">Nombre</string>
+    <string name="hint_name">Ingrese su nombre</string>
+    <string name="genere_label">Género</string>
 </resources>
