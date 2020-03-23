@@ -23,9 +23,9 @@ class RelativeVsLinearActivity : AppCompatActivity() {
     private fun getStringFromIntent(intentKey: String): String {
         if (intent.hasExtra(intentKey)) {
             var extra: Bundle? = intent.extras
-            var text: String? = extra?.get(intentKey).toString()
+            var text = extra?.get(intentKey)
             if (text != null) {
-                return text
+                return text.toString()
             }
         }
         return ""
