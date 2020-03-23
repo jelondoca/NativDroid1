@@ -13,9 +13,11 @@ class MyFirstActivity: AppCompatActivity() {
 
         buttonLogin.setOnClickListener{
             var myIntent = Intent(this, RelativeVsLinearActivity::class.java)
-            myIntent.putExtra("user",editTextUser.text)
-            myIntent.putExtra("pass",editTextPass.text)
-            startActivity(myIntent)
+
+            myIntent.putExtra("user", editTextUser.text)
+            myIntent.putExtra("pass", editTextPass.text)
+
+            this.startActivity(myIntent)
         }
     }
 }

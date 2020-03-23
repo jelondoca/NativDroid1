@@ -1,5 +1,6 @@
 package com.example.nativdroid1
 
+import android.content.DialogInterface.*
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,11 +13,23 @@ class RelativeVsLinearActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_relative_vs_linear)
 
+        var user = getStringFromIntent("user")
+        var pass = getStringFromIntent("pass")
+        etName.setText(user)
+        etPass.setText(pass)
 
-        val user = getIntent().getStringExtra("user")
-        val pass = getIntent().getStringExtra("pass")
-
-        etName.setText(user);
-        etPass.setText(pass);
     }
+
+    private fun getStringFromIntent(intentKey: String): String {
+        if (intent.hasExtra(intentKey)) {
+            var extra: Bundle? = intent.extras
+            var text: String? = extra?.get(intentKey).toString()
+            if (text != null) {
+                return text
+            }
+        }
+        return ""
+
+    }
+
 }
