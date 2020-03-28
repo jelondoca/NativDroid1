@@ -30,4 +30,24 @@ class MyFirstActivity: AppCompatActivity() {
             Toast.makeText(this, "$result",Toast.LENGTH_LONG).show()
         }
     }
+
+    override fun onStart() {
+        Toast.makeText(this, "onStart",Toast.LENGTH_LONG).show()
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Toast.makeText(this, "onResume",Toast.LENGTH_LONG).show()
+        super.onResume()
+    }
+
+    override fun onStop() {
+        Toast.makeText(this, "onStop",Toast.LENGTH_LONG).show()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Toast.makeText(this, "onDestroy",Toast.LENGTH_LONG).show()
+        super.onDestroy()
+    }
 }
