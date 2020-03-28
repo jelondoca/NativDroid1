@@ -13,8 +13,11 @@ class RelativeVsLinearActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_relative_vs_linear)
 
-        var user = getStringFromIntent("user")
-        var pass = getStringFromIntent("pass")
+        //var user = getStringFromIntent("user")
+        //var pass = getStringFromIntent("pass")
+        var user = intent.getStringExtra("user")
+        var pass = intent.getStringExtra("pass")
+
         etName.setText(user)
         etPass.setText(pass)
 
@@ -30,6 +33,14 @@ class RelativeVsLinearActivity : AppCompatActivity() {
         }
         return ""
 
+    }
+
+    override fun onBackPressed() {
+
+        setResult(457889,Intent().apply {
+            putExtra("result", "Resultado de la actividad 2")
+        })
+        super.onBackPressed()
     }
 
 }

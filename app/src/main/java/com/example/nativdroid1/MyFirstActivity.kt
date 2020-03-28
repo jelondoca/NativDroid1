@@ -1,7 +1,9 @@
 package com.example.nativdroid1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.relative_layout_activity.*
 
@@ -14,10 +16,18 @@ class MyFirstActivity: AppCompatActivity() {
         buttonLogin.setOnClickListener{
             var myIntent = Intent(this, RelativeVsLinearActivity::class.java)
 
-            myIntent.putExtra("user", editTextUser.text)
-            myIntent.putExtra("pass", editTextPass.text)
+            myIntent.putExtra("user", editTextUser.text.toString())
+            myIntent.putExtra("pass", editTextPass.text.toString())
 
-            this.startActivity(myIntent)
+            this.startActivityForResult(myIntent,12)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 12 && resultCode == 457889){
+            var result = data?.getStringExtra("result")
+            Toast.makeText(this, "$result",Toast.LENGTH_LONG).show()
         }
     }
 }
